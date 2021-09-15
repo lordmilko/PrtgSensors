@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.customlookups.veeam.backupstate" desiredValue="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+      <SingleInt state="Ok" value="0">
+        Success
+      </SingleInt>
+      <SingleInt state="Ok" value="1">
+        Running
+      </SingleInt>
+      <SingleInt state="Warning" value="2">
+        Warning
+      </SingleInt>
+      <SingleInt state="Error" value="3">
+        Failed
+      </SingleInt>
+      <SingleInt state="Error" value="4">
+        Disabled
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>

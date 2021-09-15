@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <ValueLookup id="prtg.customlookups.sqlserver.databasehealth" desiredValue="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PaeValueLookup.xsd">
+    <Lookups>
+      <SingleInt state="Ok" value="0">
+        Normal
+      </SingleInt>
+      <SingleInt state="Ok" value="1">
+        Standby
+      </SingleInt>
+      <SingleInt state="Warning" value="2">
+        Restoring
+      </SingleInt>
+      <SingleInt state="Warning" value="3">
+        AutoClosed
+      </SingleInt>
+      <SingleInt state="Warning" value="4">
+        Recovering
+      </SingleInt>
+      <SingleInt state="Warning" value="5">
+        RecoveryPending
+      </SingleInt>
+      <SingleInt state="Warning" value="6">
+        EmergencyMode
+      </SingleInt>
+      <SingleInt state="Error" value="7">
+        Shutdown
+      </SingleInt>
+      <SingleInt state="Error" value="8">
+        Suspect
+      </SingleInt>
+      <SingleInt state="Error" value="9">
+        Offline
+      </SingleInt>
+      <SingleInt state="Error" value="10">
+        Inaccessible
+      </SingleInt>
+    </Lookups>
+  </ValueLookup>
