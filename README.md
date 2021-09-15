@@ -12,7 +12,7 @@ Custom Sensors for use with PRTG Network Monitor
 | * [Get-ClusterStatus.ps1](#get-clusterstatusps1)                 | Failover Clustering        | Monitors the health of cluster nodes/resources       |
 | * [TCPing.ps1](#tcpingps1)                                       |                            | PowerShell port of [tcping](https://www.elifulkerson.com/projects/tcping.php) for use with PRTG          |
 | * [Get-MissingPrtgServers](#get-missingprtgserversps1)           | PRTG Network Monitor       | Monitors servers in AD missing from PRTG             |
-| * [PSx64](psx64)                                                 | PRTG Network Monitor       | Elevates PowerShell scripts to run as 64-bit         |
+| [PSx64](psx64)                                                   | PRTG Network Monitor       | Elevates PowerShell scripts to run as 64-bit         |
 | * [Get-RDSConnectionsAllowed](#get-rdsconnectionsallowedps1)     | Remote Desktop Services    | Monitors Terminal Servers denying new connections    |
 | * [Get-RDSSessionHealth](#get-rdssessionhealthps1)               | Remote Desktop Services    | Monitors null sessions/locked profile disks          |
 | [Get-SqlDatabaseHealth](#get-sqldatabasehealthps1)               | SQL Server                 | Monitors the health of SQL Server databases          |
