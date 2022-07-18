@@ -3,6 +3,7 @@
 
 # Changelog
 # #########
+# v1.3.17: Fix missing TapeJob::GetAll function, add EpAgentPolicy job type
 # v1.3.16: Fix [DateTime] cast using invariant culture instead of current culture, support Veeam 11
 # v1.3.15: Update to use PrtgXml, Fix crash where NextRun is an empty string when backup job is disabled
 # v1.3.14: Fixed a bug wherein script would fail to detect when job that hadn't run yet was disabled
@@ -87,6 +88,7 @@ function RunAs64Bit($server, $jobName)
 function CBackupJob::GetAll            { return [Veeam.Backup.Core.CBackupJob]::GetAll() }
 function CBackupJob::Get($name)        { return [Veeam.Backup.Core.CBackupJob]::Get($name) }
 function CBackupSession::GetByJob($id) { return [Veeam.Backup.Core.CBackupSession]::GetByJob($id) }
+function TapeJob::GetAll               { return [Veeam.Tape.Core.TapeJob]::GetAll() }
 
 function CDBManager::GetSessionsForJob($id) { return [Veeam.Backup.DBManager.CDBManager]::Instance.BackupJobsSessions.GetSessionsForJob($id) }
 function CBackupSession::Create($info) { return [Veeam.Backup.Core.CBackupSession]::Create($info, $null) }
@@ -175,9 +177,9 @@ class VeeamBackupStatus
         {
             switch($backup.JobType)
             {
-                {$_ -in "Backup","Replica","BackupSync","EndpointBackup"} { $handler = [BackupHandler]::new($backup, $this.jobName) }
-                {$_ -in "VmTapeBackup","FileTapeBackup"}                  { $handler = [TapeBackupHandler]::new($backup, $this.jobName) }
-                default                                                   { $handler = [UnknownJobTypeBackupHandler]::new($backup, $this.jobName) }
+                {$_ -in "Backup","Replica","BackupSync","EndpointBackup","EpAgentPolicy"} { $handler = [BackupHandler]::new($backup, $this.jobName) }
+                {$_ -in "VmTapeBackup","FileTapeBackup"}                                  { $handler = [TapeBackupHandler]::new($backup, $this.jobName) }
+                default                                                                   { $handler = [UnknownJobTypeBackupHandler]::new($backup, $this.jobName) }
             }
         }
 
