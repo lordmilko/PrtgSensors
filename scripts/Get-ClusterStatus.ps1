@@ -16,7 +16,7 @@ function Main($cluster)
                 Result {
                     Channel $node.Name
                     Value (GetNodeState $node.State)
-                    ValueLookup prtg.customsensors.sql.nodestate
+                    ValueLookup prtg.customlookups.sql.nodestate
                 }
             }
 
@@ -25,7 +25,7 @@ function Main($cluster)
                 Result {
                     Channel $resource.Name
                     Value (GetResourceState $resource.State)
-                    ValueLookup prtg.customsensors.onlineoffline
+                    ValueLookup prtg.customlookups.onlineoffline
                 }
             }
         }
